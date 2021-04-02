@@ -1,0 +1,8 @@
+row_id;user_id;user_state;user_manager
+1;USER0001;Activo      ;MGER0001
+2;USER0002;Desvinculado;MGER0002
+3;USER0003;Pausado     ;MGER0002
+4;USER0004;Activo      ;MGER0003
+5;USER0005;Activo      ;MGER0002
+6;USER0006;Pausado     ;MGER0001
+7;USER0007;Desvinculado;MGER0003

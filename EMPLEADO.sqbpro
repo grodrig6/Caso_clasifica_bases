@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/gercm/Desktop/Caso-Json_y_CSV_en_base_de_datos/Base_de_datos/CLASIFICACION.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="4233"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainUSUARIOS"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="BASE_DE_DATOS" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="246"/><column index="2" value="176"/><column index="3" value="186"/><column index="4" value="192"/><column index="5" value="245"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="MANAGERS" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="167"/><column index="2" value="217"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="USUARIOS" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="159"/><column index="2" value="213"/><column index="3" value="209"/><column index="4" value="200"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">--CREACION DE BASE DE DATOS CLASIFICACION
+--CREATE DATABASE CLASIFICACION;
+
+--CREACION DE TABLAS ASOCIADAS A CLASIFICACION
+/*CREATE TABLE MANAGERS(
+	MA_ID_MANAGER VARCHAR(8) NOT NULL,
+    MA_CORREO_MANAGER VARCHAR(60) NOT NULL,
+    PRIMARY KEY (MA_ID_MANAGER)
+);
+
+CREATE TABLE USUARIOS(
+    US_ID_USUARIO VARCHAR(8) NOT NULL,
+	US_NOMBRE_USUARIO VARCHAR(9) NOT NULL,
+    US_CORREO_USUARIO VARCHAR(60) NOT NULL,
+    FK_MA_ID_MANAGER VARCHAR(8) NOT NULL,
+    PRIMARY KEY (US_ID_USUARIO),
+	CONSTRAINT FK_MANAGER FOREIGN KEY (FK_MA_ID_MANAGER) REFERENCES MANAGERS (MA_ID_MANAGER)
+);
+
+CREATE TABLE CLASIFICACIONES(
+    CL_ID_CLASIFICACION INTEGER NOT NULL,
+    CL_NIVEL_CLASIFICACION VARCHAR(5) NOT NULL,
+    PRIMARY KEY (CL_ID_CLASIFICACION AUTOINCREMENT)
+);
+
+CREATE TABLE BASE_DE_DATOS(
+    IDEN_ID_BASE_DE_DATOS INTEGER NOT NULL,
+    IDEN_NOMBRE_DB varchar(40) NOT NULL UNIQUE,
+    IDEN_DESCRIPCION varchar(200),
+	FK_US_ID_USUARIO VARCHAR(8) NOT NULL,
+	FK_CL_ID_CLASIFICACION INTEGER NOT NULL,
+    PRIMARY KEY (IDEN_ID_BASE_DE_DATOS)
+	CONSTRAINT FK_USUARIO FOREIGN KEY (FK_US_ID_USUARIO) REFERENCES USUARIOS (US_ID_USUARIO),
+	CONSTRAINT FK_CLASIFICACION FOREIGN KEY (FK_CL_ID_CLASIFICACION) REFERENCES CLASIFICACIONES (CL_ID_CLASIFICACION)
+);
+
+--INSERCION DE DATOS TABLA MANAGERS
+INSERT INTO MANAGERS ( MA_ID_MANAGER, MA_CORREO_MANAGER) VALUES 
+('MGER0001', 'mgonzal01@empresa.com'),
+('MGER0002', 'fcarrer90@empresa.com'),
+('MGER0003', 'lsuazo046@empresa.com');
+
+--INSERCION DE DATOS TABLA USUARIOS
+INSERT INTO USUARIOS ( US_ID_USUARIO, US_NOMBRE_USUARIO, US_CORREO_USUARIO, FK_MA_ID_MANAGER)VALUES
+('USER0001', 'ggonzal02', 'ggonzal02@empresa.com', 'MGER0001'),
+('USER0002', 'kherrer31', 'kherrer31@empresa.com', 'MGER0002'),
+('USER0003', 'csoto0001', 'csoto0001@empresa.com', 'MGER0002'),
+('USER0004', 'acontre67', 'acontre67@empresa.com', 'MGER0003'),
+('USER0005', 'rorozco01', 'rorozco01@empresa.com', 'MGER0002'),
+('USER0006', 'mcampin18', 'mcampin18@empresa.com', 'MGER0001'),
+('USER0007', 'vbravo022', 'vbravo022@empresa.com', 'MGER0003');
+
+
+--INSERCION DE DATOS TABLA CLASIFICACIONES
+INSERT INTO CLASIFICACIONES (CL_NIVEL_CLASIFICACION) VALUES 
+('HIGH '),
+('MEDIA'),
+('LOW  ');
+*//*
+DROP TABLE TRABAJADOR;
+
+--CREACION BASE DE DATOS EMPLEADO
+--CREATE DATABASE EMPLEADO;
+CREATE TABLE TRABAJADORES (
+	TR_ID	VARCHAR(8) NOT NULL,
+	TR_USUARIO	VARCHAR(9) NOT NULL UNIQUE,
+	TR_CONTRASENIA	VARCHAR(40) NOT NULL UNIQUE,
+	PRIMARY KEY(TR_ID)
+);
+
+
+
+--INSERTA DATOS EN TABLA TRABAJADOR
+INSERT INTO TRABAJADORES ( TR_ID, TR_USUARIO, TR_CONTRASENIA)VALUES
+        (&quot;USER0001&quot;, &quot;ggonzal02&quot;, &quot;b'U0c5c1lXUnBiM014'&quot;),
+        (&quot;USER0002&quot;, &quot;kherrer31&quot;, &quot;b'U0c5c1lXUnBiM015'&quot;),
+        (&quot;USER0003&quot;, &quot;csoto0001&quot;, &quot;b'U0c5c1lXUnBiM016'&quot;),
+        (&quot;USER0004&quot;, &quot;acontre67&quot;, &quot;b'U0c5c1lXUnBiM00w'&quot;),
+        (&quot;USER0005&quot;, &quot;rorozco01&quot;, &quot;b'U0c5c1lXUnBiM00x'&quot;),
+        (&quot;USER0006&quot;, &quot;mcampin18&quot;, &quot;b'U0c5c1lXUnBiM00y'&quot;),
+        (&quot;USER0007&quot;, &quot;vbravo022&quot;, &quot;b'U0c5c1lXUnBiM00z'&quot;);
+*/
+-- Holadios1
+-- Holadios2
+-- Holadios3
+-- Holadios4
+-- Holadios5
+-- Holadios6
+-- Holadios7
+
+--INSERCION DE DATOS TABLA USUARIOS
+
+
+
+--INSERCION DE DATOS TABLA MANAGERS
+/*INSERT INTO BASE_DE_DATOS (IDEN_ID_BASE_DE_DATOS, IDEN_NOMBRE_DB, IDEN_DESCRIPCION,
+	FK_US_ID_USUARIO, FK_CL_ID_CLASIFICACION) VALUES 
+(1001, 'EMPLEADO', 'Contiene informacion de los empleados de la empresa', 'USER0003', 2);*/
+
+/*SELECT IDEN_ID_BASE_DE_DATOS, IDEN_NOMBRE_DB, IDEN_DESCRIPCION, u.US_NOMBRE_USUARIO, CL_NIVEL_CLASIFICACION
+FROM BASE_DE_DATOS b
+JOIN  USUARIOS u ON b.FK_US_ID_USUARIO = u.US_ID_USUARIO 
+JOIN CLASIFICACIONES c ON b.FK_CL_ID_CLASIFICACION = c.CL_ID_CLASIFICACION
+WHERE b.IDEN_ID_BASE_DE_DATOS = 1001 AND
+	  b.IDEN_NOMBRE_DB = 'EMPLEADO'
+	*/  
+
+/*SELECT CL_ID_CLASIFICACION
+FROM CLASIFICACIONES
+WHERE CL_NIVEL_CLASIFICACION = 'HIGH'*/
+
+/*SELECT US_ID_USUARIO
+FROM USUARIOS
+WHERE US_NOMBRE_USUARIO = 'mcampin18'*/
+/*
+SELECT IDEN_ID_BASE_DE_DATOS, IDEN_NOMBRE_DB, IDEN_DESCRIPCION, 
+            u.US_NOMBRE_USUARIO, CL_NIVEL_CLASIFICACION 
+            FROM BASE_DE_DATOS b
+            JOIN  USUARIOS u ON b.FK_US_ID_USUARIO = u.US_ID_USUARIO 
+            JOIN CLASIFICACIONES c ON b.FK_CL_ID_CLASIFICACION = c.CL_ID_CLASIFICACION
+            WHERE b.IDEN_ID_BASE_DE_DATOS = 1001 */
+			/*
+UPDATE BASE_DE_DATOS SET IDEN_DESCRIPCION = 'Se ha modificado esto',
+FK_US_ID_USUARIO = 'USER0007',
+FK_CL_ID_CLASIFICACION = 3
+WHERE IDEN_ID_BASE_DE_DATOS = 1001*/
+/*
+SELECT IDEN_ID_BASE_DE_DATOS, IDEN_NOMBRE_DB, IDEN_DESCRIPCION,
+                c.CL_NIVEL_CLASIFICACION
+                FROM BASE_DE_DATOS b
+                JOIN USUARIOS u ON b.FK_US_ID_USUARIO = u.US_ID_USUARIO
+                JOIN CLASIFICACIONES c ON b.FK_CL_ID_CLASIFICACION = c.CL_ID_CLASIFICACION
+                WHERE b.IDEN_ID_BASE_DE_DATOS = 1001*/
+				
+SELECT US_NOMBRE_USUARIO FROM USUARIOS WHERE US_ID_USUARIO = 'USER0005'</sql><current_tab id="0"/></tab_sql></sqlb_project>

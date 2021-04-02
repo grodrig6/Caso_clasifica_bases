@@ -1,0 +1,46 @@
+[
+	{
+	"id":"1001",
+	"nombre_base_datos":"EMPLEADO",
+	"descripcion":"Contiene informacion de los empleados de la empresa",
+	"usuario":"csoto0001",
+	"clasificacion":"HIGh"
+	},
+	{
+	"id":1002,
+	"nombre_base_datos":"CREDITO",
+	"usuario":"csoto0002",
+	"clasificacion":"low"
+	},
+	{
+	"id":1003,
+	"nombre_base_datos":"NORMALIZACION",
+	"descripcion":"Contiene informacion de los empleados de la empresa",
+	"clasificacion":"high"
+	},
+	{
+	"id":1004,
+	"nombre_base_datos":"TARJETA",
+	"descripcion":"Flujo tardetas",
+	"usuario":"acontre67"
+	},
+	{
+	"id":1005,
+	"descripcion":"FLUJO CONVENIO",
+	"usuario":"mcampin18",
+	"clasificacion":"low"
+	},
+	{
+	"id":1006,
+	"nombre_base_datos":"PAGO",
+	"descripcion":"Flujo pagos",
+	"usuario":"vbravo022",
+	"clasificacion":"HIGH"
+	},
+	{
+	"nombre_base_datos":"CLASIFICACION",
+	"descripcion":"Clasifica todas las bases de datos",
+	"usuario":"ggonzal02",
+	"clasificacion":"media"
+	}
+]
